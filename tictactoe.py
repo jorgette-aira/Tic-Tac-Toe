@@ -27,10 +27,10 @@ ACTIVE_BG = "#306230"      # Mid-tone Green for hover states
 root.config(bg=BG_COLOR)
 
 # --- LOAD CUSTOM IMAGE ASSETS ---
-IMAGE_PATH_X = resource_path("X.png") 
-IMAGE_PATH_O = resource_path("O.png") 
-IMAGE_PATH_SCORE = resource_path("scoreboard.png") 
-IMAGE_PATH_TITLE = resource_path("title.png")
+IMAGE_PATH_X = resource_path(os.path.join("assets", "X.png")) 
+IMAGE_PATH_O = resource_path(os.path.join("assets", "O.png")) 
+IMAGE_PATH_SCORE = resource_path(os.path.join("assets", "scoreboard.png")) 
+IMAGE_PATH_TITLE = resource_path(os.path.join("assets", "header.png"))
 
 if os.path.exists(IMAGE_PATH_X):
     x_image = tk.PhotoImage(file=IMAGE_PATH_X)
@@ -59,7 +59,7 @@ else:
 # --- LOAD PIXEL DIGIT IMAGES (0-9) ---
 num_images = {}
 for i in range(10):
-    num_path = resource_path(f"{i}.png")
+    num_path = resource_path(os.path.join("assets", f"{i}.png"))
     if os.path.exists(num_path):
         num_images[str(i)] = tk.PhotoImage(file=num_path)
     else:
